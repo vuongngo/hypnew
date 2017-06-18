@@ -1,0 +1,22 @@
+db:
+  image: mongo
+  extra_hosts:
+    mongo: 127.0.0.1
+  ports:
+    - "27017:27017"
+frontend:
+  image: hypfrontend
+  extra_hosts:
+    hypfrontend: 127.0.0.1
+  ports:
+    - "3000:3005"
+admin:
+  image: hypadmin
+  links:
+   - db
+  extra_hosts:
+    hypfrontend: 127.0.0.1
+  ports:
+    - "3001:3000"
+  environment:
+    - "MONGO_URI=mongodb://db:27017/dev"
