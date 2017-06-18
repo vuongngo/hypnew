@@ -10,6 +10,17 @@ frontend:
     hypfrontend: 127.0.0.1
   ports:
     - "3000:3005"
+backend:
+  image: hypbackend
+  extra_hosts:
+    hypbackend: 127.0.0.1
+  ports:
+    - "3001:3001"
+  links:
+   - db
+  environment:
+    - "MONGO_URI=db"
+    - "NODE_ENV=development"
 admin:
   image: hypadmin
   links:
@@ -17,6 +28,6 @@ admin:
   extra_hosts:
     hypfrontend: 127.0.0.1
   ports:
-    - "3001:3000"
+    - "3002:3000"
   environment:
     - "MONGO_URI=mongodb://db:27017/dev"
