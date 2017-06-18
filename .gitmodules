@@ -1,9 +1,9 @@
 [submodule "hypfrontend"]
 	path = hypfrontend
-	url = git@github.com:vuongngo/hypfrontend.git
+	url = https://github.com/vuongngo/hypfrontend.git
 [submodule "hypadmin"]
 	path = hypadmin
-	url = git@github.com:vuongngo/hypadmin.git
+	url = https://github.com/vuongngo/hypadmin.git
 [submodule "hypbackend"]
 	path = hypbackend
-	url = git@github.com:vuongngo/hypbackend.git
+	url = https://github.com/vuongngo/hypbackend.git
